@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  api:
+    container_name: api
+    image: node:18
+    environment:
+      HTTPS_METHOD: noredirect
+    ports:
+      - 8081:3000
+    volumes:
+      - ./:/usr/src/app
+    working_dir: /usr/src/app
+    command: yarn run start:dev
+  
+  redis:
+    container_name: redis
+    image: redis:7
+    volumes:
+      - ./redis:/data
+    ports:
+      - 6379:6379
+    restart: always
+  mysql:
+    container_name: mysql
+    image: mysql
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=Thang123
