@@ -1,7 +1,8 @@
+import { AppConfig } from './app.config';
 import { DatabaseConfig } from './database.config';
 import { RedisConfig } from './redis.config';
 import { SwaggerConfig } from './swagger.config';
 
-export const loadConfigs = [DatabaseConfig, RedisConfig];
+export const loadConfigs = [AppConfig, DatabaseConfig, RedisConfig];
 
-export { DatabaseConfig, RedisConfig, SwaggerConfig };
+export { AppConfig, DatabaseConfig, RedisConfig, SwaggerConfig };

@@ -1,16 +1,16 @@
 version: "3.8"
 services:
-  api:
-    container_name: api
-    image: node:18
-    environment:
-      HTTPS_METHOD: noredirect
-    ports:
-      - 8081:3000
-    volumes:
-      - ./:/usr/src/app
-    working_dir: /usr/src/app
-    command: yarn run start:dev
+  # api:
+  #   container_name: api
+  #   image: node:18
+  #   environment:
+  #     HTTPS_METHOD: noredirect
+  #   ports:
+  #     - 8081:3000
+  #   volumes:
+  #     - ./:/usr/src/app
+  #   working_dir: /usr/src/app
+  #   command: yarn run start:dev
   
   redis:
     container_name: redis
